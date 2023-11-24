@@ -1,0 +1,656 @@
+:root {
+  --primary: #6d77d4;
+  --bg: #010101;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid #55402b;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.4rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+
+.navbar-nav a.active {
+  color: var(--primary);
+}
+
+
+#hamburger-menu {
+  display: none;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/header-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(1, 1, 3, 1) 8%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+
+.hero .content-home,
+.hero .content{
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content-home h1 {
+  font-size: 4rem;
+  color: #b4afaf;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content-home h1 span {
+  color: var(--primary);
+}
+
+.hero .content-home h1 span1 {
+  font-style: italic;
+  color: #008c45;
+}
+
+.hero .content-home h1 span2 {
+  font-style: italic;
+  color: #f4f9ff;
+}
+
+.hero .content-home h1 span3 {
+  font-style: italic;
+  color: #cd212a;
+}
+
+.hero .content p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  height: 1.2;
+  font-weight: 100;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  mix-blend-mode: difference;
+}
+
+/* About Section */
+.about,
+.menu,
+.contact,
+.comment {
+  padding: 6rem 7% 1.4rem;
+}
+
+.about h2,
+.menu h3,
+.contact h3,
+.comment h3 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.about h2 span,
+.menu h3 span,
+.contact h3 span,
+.comment h3 span {
+  color: var(--primary);
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+/* Menu Section */
+.menu h3,
+.contact h2 {
+  margin-bottom: 1rem;
+}
+
+.menu .menuan {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu .menuan a {
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+  justify-self: space-between;
+}
+
+.menu .menuan a:hover {
+  color: var(--primary);
+}
+
+.menu .menuan a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.menu .menuan a:hover::after {
+  transform: scaleX(0.5);
+}
+
+
+/* Makanan, Minuman, Dessert */
+.makanan .row,
+.minuman .row,
+.dessert .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  justify-content: center;
+}
+
+.makanan .row .menu-card,
+.minuman .row .menu-card,
+.dessert .row .menu-card {
+  flex-basis: calc(33.33% - 20px);
+  text-align: center;
+  padding-bottom: 5rem;
+}
+
+.makanan .row .menu-card img,
+.minuman .row .menu-card img,
+.dessert .row .menu-card img {
+  margin: 2rem;
+  border-radius: 25%;
+  width: 90%;
+}
+
+.makanan .row .menu-card .menu-card-title,
+.minuman .row .menu-card .menu-card-title,
+.dessert .row .menu-card .menu-card-title {
+  margin: 1rem auto 0.5rem;
+}
+
+.rating {
+  font-size: 2rem;
+}
+
+.star {
+  color: gold;
+  display: inline-block;
+}
+
+.star:empty {
+  color: lightgray;
+}
+
+
+
+/* Modal Box */
+/* Item Detail */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal h3{
+  margin-bottom: 0.5rem;
+}
+
+.modal-container {
+  position: relative;
+  background-color: var(--primary);
+  border-radius: 20px;
+  color: var(--bg);
+  margin: 15% auto;
+  padding: 1.2rem;
+  border: 1px solid #666;
+  width: 80%;
+  animation: animateModal 0.5s;
+}
+
+/* Modal Animation */
+@keyframes animateModal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.modal-container .close-icon1,
+.modal-container .close-icon2,
+.modal-container .close-icon3,
+.modal-container .close-icon4,
+.modal-container .close-icon5,
+.modal-container .close-icon-min1,
+.modal-container .close-icon-min2,
+.modal-container .close-icon-min3,
+.modal-container .close-icon-min4,
+.modal-container .close-icon-min5,
+.modal-container .close-icon-des1,
+.modal-container .close-icon-des2,
+.modal-container .close-icon-des3 {
+  color: #fff;
+  position: absolute;
+  right: 1rem;
+}
+
+.modal-content {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.modal-content img {
+  border-radius: 5rem;
+  height: 15rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.modal-content .menu-card-price {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  margin-top: 2rem;
+}
+
+.modal-content h3,
+.modal-content p {
+  color: #fff;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-top: 0rem;
+}
+
+.modal-content a {
+  display: flex;
+  gap: 1rem;
+  width: 12rem;
+  background-color: var(--primary);
+  color: #fff;
+  margin-top: 1rem;
+  padding: 1rem 1.6rem;
+}
+
+/* Contact Section */
+.contact .row {
+  display: flex;
+  margin-top: 2rem;
+  background-color: #222;
+}
+
+.contact .row .map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contact .row form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--bg);
+  border: 1px solid #eee;
+  padding-left: 2rem;
+}
+
+.contact .row form .input-group input {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  background: none;
+  color: #fff;
+}
+
+.contact .row form .input-message {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--bg);
+  border: 1px solid #eee;
+  padding-left: 2rem;
+}
+
+.contact .row form .input-message textarea {
+  width: 100%;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  background: none;
+  color: #fff;
+  resize: none;
+}
+
+.contact .row form .btn {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  color: #fff;
+  background-color: var(--primary);
+  cursor: pointer;
+}
+
+/* Comment section */
+.comment .komen {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: 2rem;
+  margin: 3rem;
+  background-color: #292b43;
+  border-radius: 20px;
+}
+
+.comment .komentak,
+.comment p {
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  display: flexbox;
+  margin-top: 2rem;
+  margin: 3rem;
+  background-color: var(--primary);
+  border-radius: 20px;
+  height: 100%;
+}
+
+.comment .komentak h3,
+.comment .komentak h4,
+.comment .komentak .isi {
+  margin: 1rem;
+  color: var(--bg);
+}
+
+.comment .komentak .isikom {
+  text-align: center;
+}
+
+.comment .komentak .waktu {
+  margin: 3rem;
+}
+
+.comment .komentak span {
+  font-weight: 300;
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1rem 0 3rem;
+  margin-top: 3rem;
+}
+
+footer .socials {
+  padding: 1rem 0;
+}
+
+footer .socials a {
+  color: #fff;
+  margin: 1rem;
+}
+
+footer .socials a:hover {
+  color: var(--bg);
+}
+
+footer .links {
+  margin-bottom: 1rem;
+}
+
+footer .links a {
+  color: #fff;
+  padding: 0.7rem 0.7rem;
+}
+
+footer .links a:hover {
+  color: var(--bg);
+}
+
+footer .credit {
+  font-size: 0.8rem;
+}
+
+footer .credit a {
+  color: #04ff85;
+  font-weight: 700;
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .navbar .search-form {
+    width: 80%;
+    height: 5rem;
+  }
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about .row .content {
+    padding: 0;
+  }
+
+  .about .row .content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .about .row .content p {
+    font-size: 1.6rem;
+  }
+
+  .makanan .row .menu-card,
+  .minuman .row .menu-card,
+  .dessert .row .menu-card {
+    flex-basis: calc(100% - 20px);
+  }
+  
+  .modal-content {
+    flex-wrap: wrap;
+  }
+
+  .contact .row {
+    flex-wrap: wrap;
+  }
+
+  .contact .row .map {
+    height: 30rem;
+  }
+
+  .contact .row form {
+    padding-top: 0;
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
